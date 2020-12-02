@@ -1,0 +1,35 @@
+##UPDATE##
+Upon going [back] every star entry and planet entry duplicates
+^^FIXED: rerouted [back] through CLI.systems_within_distance
+
+TO DO:
+  -Replace empty values with "--"
+  -add "restart" functionality
+  -REFACTOR PLEASE FOR THE LOVE OF GOD
+
+
+# git status: shows all files and changes made
+# git add . :saves all files that have been modified
+# git commit -m "short update list"
+# git push -u origin master (-u is one time thing)
+^^ all equal git submit
+
+# git remote add origin "url"  ## url: git@github.com:Hunter-Kolasa/CLI_Exoplanets.git
+
+What will the code do?
+// welcome user
+// users will have access to TONS of star systems -> exoplanets
+//..can sort them by name, distance from earth and size(?)
+//..can access individual planetary information on system name, # of planets in system, 
+        planet name, distance, size/mass, temperature
+//..^^ all at once or indiviudally(?)
+// users have ability to move forwards and backwards without exiting program
+
+
+CLI class -  deal with things showing on terminal
+api class - get/deal with all info coming from api
+exoplanet class - object information
+input_to_api - takes user input from cli.rb and turns it into viable inputs for api get
+
+
+**BASE URL : https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?&table=exoplanets

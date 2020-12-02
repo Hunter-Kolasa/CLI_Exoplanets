@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+##^shebang line
+
+require './lib/environment'
+
+CLI.new.start
