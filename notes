@@ -4,7 +4,6 @@ Upon going [back] every star entry and planet entry duplicates
 
 TO DO:
   -Replace empty values with "--"
-  -add "restart" functionality
   -REFACTOR PLEASE FOR THE LOVE OF GOD
 
 
@@ -14,12 +13,15 @@ TO DO:
 # git push -u origin master (-u is one time thing)
 ^^ all equal git submit
 
+# git branch? :make a separate branch
+# git revert? :revert to older commit
+
 # git remote add origin "url"  ## url: git@github.com:Hunter-Kolasa/CLI_Exoplanets.git
 
 What will the code do?
 // welcome user
-// users will have access to TONS of star systems -> exoplanets
-//..can sort them by name, distance from earth and size(?)
+// users will have access to TONS of star systems -> exoplanets within selected distance
+//
 //..can access individual planetary information on system name, # of planets in system, 
         planet name, distance, size/mass, temperature
 //..^^ all at once or indiviudally(?)

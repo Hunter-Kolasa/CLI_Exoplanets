@@ -1,5 +1,5 @@
 class Api_Sorter
-    @stars = {
+    @stars = { #contains properly sorted data for easy access via Api_Sorter.all
         # "Proxima Cen": 
         #     {Mass: "m",
         #     Size: "r",
@@ -21,7 +21,7 @@ class Api_Sorter
     def self.clear
         @stars = {}
     end
-    def self.sort(response)
+    def self.sort(response) #rearranges hash so that exoplanets exist under star systems. removes duplicate star systems and refines list for display. 
         response.each do |planet|
             star_data = {
                 mass: planet["st_mass"],
@@ -42,7 +42,7 @@ class Api_Sorter
                 @stars[planet["pl_hostname"]]["planet_names"] = [planet["pl_name"]]
             end
         end
-        Exoplanets.new(@stars)
+        Exoplanets.new(@stars) #starts new Exoplanets instance using @stars
     end
 end
 
