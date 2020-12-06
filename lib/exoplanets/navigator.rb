@@ -109,15 +109,7 @@ class Navigator
                 sleep(0.5)
                 puts ""
                 name = gets.chomp
-            else
-                tries += 1
-                puts ""
-                puts "That star doesn't appear to exist within #{Navigator.distance} parsecs. Please try another."
-                puts ""
-                name = gets.chomp
-            end
-
-            if tries == 2
+            elsif tries == 2
                 puts ""
                 puts "Theres either something wrong with me or something wrong with you :("
                 puts ""
@@ -130,7 +122,15 @@ class Navigator
                     counter += 1
                 end
                 CLI.end
+
+            else 
+                tries += 1
+                puts ""
+                puts "That star doesn't appear to exist within #{Navigator.distance} parsecs. Please try another."
+                puts ""
+                name = gets.chomp
             end
+
         end
 
         if 0 < name.to_i && index_match >= name.to_i #checking if index number, then requesting from exoplanets
