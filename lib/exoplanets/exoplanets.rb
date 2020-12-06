@@ -8,21 +8,23 @@ class Exoplanets
             @@names << name
         end
 
-        CLI.systems_within_distance(@@names)
     end
 
     def self.all
         @@all
     end
+
     def self.clear
         @@all = {}
         @@names = []
     end
+
     def self.system(name) #takes name of star system and translates to name and data for star system. sends to CLI
         data = @@all[name]
         CLI.system(name, data)
 
     end
+    
     def self.names
         @@names
     end
