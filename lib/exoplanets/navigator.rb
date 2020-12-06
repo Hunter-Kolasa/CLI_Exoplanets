@@ -38,7 +38,7 @@ class Navigator
             CLI.systems_within_distance(Api.names)
         else 
             puts ""
-            puts "This will return #{Api.names.size} star systems. Are you sure you want to continue? [Y/N}"
+            puts "This will return #{Api.names.size} star systems. Are you sure you want to continue? [Y/N]"
             continue = gets.chomp.upcase
             until continue == "Y" || continue == "N" do
                 puts ""
