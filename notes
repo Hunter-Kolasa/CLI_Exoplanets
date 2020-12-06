@@ -1,10 +1,18 @@
+TO DO:
+  -Fix bug -> incorrect initial input sets value as distance fro cli display
+  -Replace empty values with "--"
+  -REFACTOR PLEASE FOR THE LOVE OF GOD
+  -update readme
+  -write blog
+  -push to github
+  -be happy
+
+
 ##UPDATE##
 Upon going [back] every star entry and planet entry duplicates
 ^^FIXED: rerouted [back] through CLI.systems_within_distance
 
-TO DO:
-  -Replace empty values with "--"
-  -REFACTOR PLEASE FOR THE LOVE OF GOD
+
 
 
 # git status: shows all files and changes made

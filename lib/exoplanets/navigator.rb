@@ -1,6 +1,8 @@
 class Navigator
     def self.user_start(distance) #recieves distance input from CLI
         counter = 0
+        # @@distance == "exit" ? CLI.end : false
+        # @@distance == "restart" ? start.new : false #<--move from CLI.start
         while distance.to_i == 0 
             if counter == 2
                 puts "Invalid input. Attempts exceeded. It was a pleasure almost serving you."
