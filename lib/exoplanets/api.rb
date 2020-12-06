@@ -23,4 +23,10 @@ class Api
     def self.names #save array of star systems names
         @@names
     end
+
+    def self.clear
+        @@response = {}
+        @@sorted_response = {}
+        @@names = []
+    end
 end

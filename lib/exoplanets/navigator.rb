@@ -1,9 +1,8 @@
 class Navigator
     
-    @@size = 0
-
     def self.user_start #recieves distance input from CLI
         counter = 0
+        @@size = 0
         @@distance = gets.chomp.downcase
         while @@distance.to_i == 0 
             @@distance == "exit" ? CLI.end : false
@@ -38,19 +37,24 @@ class Navigator
             CLI.systems_within_distance(Api.names)
         else 
             puts ""
+            
             puts "This will return #{Api.names.size} star systems. Are you sure you want to continue? [Y/N]"
             continue = gets.chomp.upcase
             until continue == "Y" || continue == "N" do
                 puts ""
                 puts "Please enter Y or N."
+                continue = gets.chomp.upcase
             end
 
             if continue == "Y" #call Api class to return data from API
                 CLI.systems_within_distance(Api.names)
-            else #restart w/ fancy counter for aesthetics
+            elsif continue == "N"
                 puts ""
                 puts "Ok, I'll send you back to the main screen to select a new distance."
                 dot_loop
+                CLI.new.start
+            else
+                puts "Incorrect input.. restarting"
                 CLI.new.start
             end
         end
@@ -61,6 +65,10 @@ class Navigator
     end
     def self.size
         @@size
+    end
+    def self.clear
+        @@size = 0
+        @@distance = 0
     end
     
     def self.dot_loop
