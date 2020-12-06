@@ -5,29 +5,35 @@ Host Star > Exoplanet format for use of use.  After displaying all known star sy
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add these lines to your application's Gemfile:
 
 ```ruby
-gem 'exoplanets'
+gem "rake", "~> 12.0"
+gem 'httparty', '~> 0.13.7'
+gem 'json', '~> 1.8', '>= 1.8.3'
 ```
 
 And then execute:
 
     $ bundle install
 
-Or install it yourself as:
-
-    $ gem install exoplanets
-
 ## Usage
 
-TODO: Write usage instructions here
+Launch with:
+
+    bin/run
+
+Typical Progression:
+
+    [1] Input distance value
+    [2] Input name or list number
+    [3] Input back/exit/restart
+
 
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
 ## Contributing
 

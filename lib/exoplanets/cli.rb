@@ -1,6 +1,6 @@
 class CLI
     def start #clear existing lists, display intro, request input of distance, compares to keywords, else -> send to Navigator.user_start
-        Api_Sorter.clear
+        
         Exoplanets.clear
         intro
         Navigator.user_start
@@ -24,7 +24,7 @@ class CLI
                 puts "  [#{index + 1}]  #{system}"
             end
         end
-        
+
         puts ""
         puts ""
         puts ""

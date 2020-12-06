@@ -1,4 +1,5 @@
 class Navigator
+    
     @@size = 0
 
     def self.user_start #recieves distance input from CLI
@@ -29,11 +30,11 @@ class Navigator
            @@distance = gets.chomp 
         end
             
-        Api.get_data(distance) #pulls custom data from API, stores in Api instance variable
+        Api.get_data(@@distance) #pulls custom data from API, stores in Api instance variable
         
         @@size = Api.data_size 
         # # CLI.systems_within_distance(@@names)
-        if distance.to_i < 10 #checks if data return will be very large. Either calls Api or double checks with user with size of set to be returned
+        if @@distance.to_i < 10 #checks if data return will be very large. Either calls Api or double checks with user with size of set to be returned
             CLI.systems_within_distance(Api.names)
         else 
             puts ""
@@ -54,9 +55,14 @@ class Navigator
             end
         end
     end
-    def self.size #used by CLI to display number of exoplanets being returned
+
+    def self.distance
+        @@distance
+    end
+    def self.size
         @@size
     end
+    
     def self.dot_loop
         looper = 0
         until looper == 3
@@ -66,9 +72,7 @@ class Navigator
             looper += 1
         end
     end
-    def self.distance
-        @@distance
-    end
+
     def self.system(name) #checks name or index number for validity in current list. cool Interstellar easter egg. if wrong input x3 -> exit. else sends system name to Exoplanets
         tries = 0
         index_match = Api.names.size
@@ -81,7 +85,6 @@ class Navigator
                 system(gets.chomp)
             end
 
-            
             if name == "gargantua"
                 puts ""
                 sleep(0.5)
@@ -113,6 +116,7 @@ class Navigator
                 puts ""
                 name = gets.chomp
             end
+
             if tries == 2
                 puts ""
                 puts "Theres either something wrong with me or something wrong with you :("

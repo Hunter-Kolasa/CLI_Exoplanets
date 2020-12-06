@@ -42,6 +42,7 @@ class Api_Sorter
                 @@stars[host]["planet_names"] << planet["pl_name"]
             else
                 @@stars[host] = star_data
+
                 @@stars[host]["planet_names"] = [planet["pl_name"]]
             end
         end
