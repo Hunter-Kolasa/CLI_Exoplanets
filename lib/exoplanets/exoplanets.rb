@@ -29,3 +29,6 @@ class Exoplanets
         @@names
     end
 end
+
+# class Exoplanets
+#     attr_accessor :host, :temp, :dist, :mass, :
