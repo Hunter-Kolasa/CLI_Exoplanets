@@ -26,32 +26,36 @@ class Api_Sorter
     end
 
     def self.sort(response) #rearranges hash so that exoplanets exist under star systems. removes duplicate star systems and refines list for display. 
-        puts response
-    
-
+        response.each do |planet|
             # puts planet
-            # planet.each do |key, stat|
-            #     puts stat
-            #     stat.nil? ? planet[key] = "--" : false
-            # end
-            # star_data = {
-            #     mass: planet["st_mass"],
-            #     size: planet["st_rad"],
-            #     temp: planet["st_teff"],
-            #     dist: planet["st_dist"],
-            #     exoplanets: planet["pl_pnum"]
-            # }
-            # host = planet["pl_hostname"]
-            # if @@stars.key?(host)
-            #     #send corresponding planet into an array of planets within the star in @@stars
-            #     @@stars[host]["planet_names"] << planet["pl_name"]
-            # else
-            #     @@stars[host] = star_data
+                planet.each do |key, stat|
+                    stat.nil? ? planet[key] = "--" : false
+                    # puts key,stat
+                end
+            star_data = {
+                    mass: planet["st_mass"],
+                    size: planet["st_rad"],
+                    temp: planet["st_teff"],
+                    dist: planet["sy_dist"],
+                    exoplanets: planet["sy_pnum"]
+                }
+            # puts star_data
+            host = planet["hostname"]
 
-            #     @@stars[host]["planet_names"] = [planet["pl_name"]]
-            # end
+            if @@stars.key?(host)
+                #send corresponding planet into an array of planets within the star in @@stars
+                @@stars[host]["planet_names"] << planet["pl_name"]
+            else
+                @@stars[host] = star_data
+                @@stars[host]["planet_names"] = [planet["pl_name"]]
+            end
+        end
+        # puts @@stars
+           
+            
+                
         # end
-        # @@stars
+        @@stars
     end
 end
 

@@ -9,7 +9,7 @@ class Navigator
             @@distance == "restart" ? CLI.new.start : false #<--move from CLI.start
             if @@distance == "any number"
                 dot_loop
-                puts "Ok listen here smartass"
+                puts "Ok listen here"
                 dot_loop
                 puts "Lets try this again"
                 dot_loop
