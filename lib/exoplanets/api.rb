@@ -1,13 +1,19 @@
+require 'faraday'
 class Api
     @@response = {}
     @@sorted_response = {}
     @@names = []
 
     def self.get_data(distance) #pulls all exoplanets within {distance} from NASA API
+        puts 'in get_data'
         key = "yqVmBXutaEvqJrgIvwzzmI3T8Wcof0mWpbM6Nj7v"
-        url = "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?&table=exoplanets&select=pl_hostname,st_mass,st_rad,st_teff,st_dist,pl_pnum,pl_name&where=st_dist<#{distance}&order=st_dist&format=JSON"
-        @@response = JSON.parse(HTTParty.get(url))
-        @@sorted_response = Api_Sorter.sort(@@response) 
+        url = "https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+pl_name,pl_masse,sy_dist,st_radstr+from+ps
+        +where+pl_masse+between+0.5+and+2.0&format=JSON"
+        # @@test = HTTParty.get(url)
+        @@response = Faraday.get(url)
+        # puts @@response
+        # binding.pry
+        @@sorted_response = Api_Sorter.sort(@@response.body)
         Exoplanets.new(@@sorted_response)
         @@names = Exoplanets.names
     end

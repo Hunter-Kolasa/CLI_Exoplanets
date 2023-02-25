@@ -6,7 +6,7 @@ require "./lib/exoplanets/api_sorter"
 require "./lib/exoplanets/intro"
 
 require 'pry'
-require 'httparty'
 require 'json'
+require 'faraday'
 
 

@@ -4,5 +4,8 @@ source "https://rubygems.org"
 
 
 gem "rake", "~> 12.0"
-gem 'httparty', '~> 0.13.7'
-gem 'json', '~> 1.8', '>= 1.8.3'
+gem 'faraday'
+gem 'json', '~> 2.6.3'
+gem 'pry-byebug'
+gem 'smarter_csv', '~> 1.7', '>= 1.7.4'
+
